@@ -1,0 +1,28 @@
+{%load static %}
+
+<html>
+	<head>
+		<title>Олимпиады</title>
+		<link rel="stylesheet" href="{% static 'css/olimp.css' %}">
+	</head>
+	<body>
+		<div class="page-header">
+			<h1><a href="/">САЙТ ОБ ОЛИМПИАДАХ</a></h1>
+		</div>
+		
+		<h1>Список олимпиад</h1>
+		
+		<div class="olimpiad">
+			{% for olimp in s %}
+				<hr>
+				<h2>{{olimp.title}}</h2>
+				<p>Описание: {{olimp.information}}</p>
+				<p>озраст участников: {{olimp.audience}}</p>
+				<p>Начало: {{olimp.start_dates}}</p>
+				<p>Конец: {{olimp.finish_dates}}</p>
+				<p>Сайт: {{olimp.site}}</p>
+				<hr>
+				{% endfor %}
+		</div>
+	</body>
+</html>
